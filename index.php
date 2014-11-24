@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/blueimp-gallery.min.css" type="text/css">
 		<link rel="stylesheet" href="css/bootstrap-image-gallery.css" type="text/css"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
@@ -48,7 +49,7 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
-		<div id="intro" class="page-section">
+		<div id="intro" class="page-section section">
 			<div class="container">
 				<div class="row fade-in one" id="homepage">
 					<div class="col-sm-4 col-md-4">
@@ -80,7 +81,7 @@
 				</div>
 			</div><!-- /.container -->
 		</div><!--end intro-->
-		<div id="about" class="page-section">
+		<div id="about" class="page-section section">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6" id="aboutLeft">
@@ -115,7 +116,7 @@
 			</div><!--end container-->
 		</div><!--end aboutPage-->
 		<!--PORTFOLIO-->
-		<div id="portfolio" class="page-section">
+		<div id="portfolio" class="page-section section">
 			<div class="container">
 				<h1>
 					Some Stuff I've Done
@@ -431,7 +432,7 @@
 				</div><!--panel-group-->
 			</div><!--end container-->
 		</div><!--end portfolio-->
-		<div id="skills" class="page-section">
+		<div id="skills" class="page-section section">
 			<div class="container">
 				<h1>
 					Some Stuff I Can Do
@@ -499,12 +500,12 @@
 					</div>
 				</div><!--end row-->
 				<div class="col-xs-5 col-sm-offset-4 pie_chart">
-					<object data="img/pieChart.svg" type="image/svg+xml">
+					<object data="img/skills_chart.svg" type="image/svg+xml">
 						</object>
 				</div>
 			</div><!--end container-->
 		</div><!--end skills-->
-		<div id="contact" class="page-section">
+		<div id="contact" class="page-section section">
 			<div class="container">
 				<h1>
 					Like What You See? Hire Me!
@@ -616,57 +617,70 @@
 
 
 		<!- Bootstrap core JavaScript -->
-				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript">
-</script> <script type="text/javascript" src="js/bootstrap.js">
-</script> <script type="text/javascript" src="js/modernizr-2.6.2.min.js">
-</script> <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
-				 <script src="js/jquery.blueimp-gallery.min.js" type="text/javascript">
-</script> <script src="js/bootstrap-image-gallery.js" type="text/javascript">
-</script> <script src="js/script.js" type="text/javascript">
-</script> <script type="text/javascript">
-$(document).ready(function() {
-				// navigation click actions 
-				$('.scroll-link').on('click', function(event){
-				event.preventDefault();
-				var sectionID = $(this).attr("data-id");
-				scrollToID('#' + sectionID, 750);
-				});
-				// scroll to top action
-				$('.scroll-top').on('click', function(event) {
-				event.preventDefault();
-				$('html, documentElement').animate({scrollTop:0}, 'slow');      
-				});
-				});
+				<script type="text/javascript" src="js/bootstrap.js"></script>
+				<script type="text/javascript" src="js/modernizr-2.8.3.min.js"></script> <!-- Bootstrap JS is not required, but included for the responsive demo navigation and button states -->
+				<script src="js/jquery.blueimp-gallery.min.js" type="text/javascript"></script>
+				<script src="js/bootstrap-image-gallery.js" type="text/javascript"></script>
+				<script src="js/script.js" type="text/javascript"></script>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						// navigation click actions 
+						$('.scroll-link').on( 'click', function(event){
 
-				$('.navbar-collapse').click('li', function() {
-				$('.navbar-collapse').collapse('hide');
-				});
-				// scroll function
-				function scrollToID(id, speed){
-				var offSet = 50;
-				var targetOffset = $(id).offset().top - offSet;
-				var mainNav = $('#main-nav');
-				$('html,documentElement').animate({scrollTop:targetOffset}, speed);
-				if (mainNav.hasClass("open")) {
-				mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-				mainNav.removeClass("open");
-				}
-				}
-				if (typeof console === "undefined") {
-				console = {
-				log: function() { }
-				};
-				}
-				</script> <script type="text/javascript">
-document.getElementById('links').onclick = function (event) {
-				event = event || window.event;
-				var target = event.target || event.srcElement,
-				link = target.src ? target.parentNode : target,
-				options = {index: link, event: event},
-				links = this.getElementsByTagName('a');
-				blueimp.Gallery(links, options);
-				};
-				</script>
+							event.preventDefault();
+							var sectionID = $(this).attr("data-id");
+							scrollToID('#' + sectionID, 750);
+
+						});
+
+						// scroll to top action
+						$('.scroll-top').on('click', function(event) {
+							event.preventDefault();
+							$('html, body').animate({scrollTop:0}, 'slow');      
+						});
+
+						// mobile nav toggle
+						$('#navbar-toggle').on('click', function(event) {
+							event.preventDefault();
+							$('#main-nav').toggleClass('open');
+						})
+					});
+
+					// $('.navbar-collapse').click('li', function() {
+					// 	$('.navbar-collapse').collapse('hide');
+					// });
+
+					// scroll function
+					function scrollToID(id, speed){
+
+						var offSet = 50;
+						var targetOffset = $(id).offset().top - offSet;
+						var mainNav = $('#main-nav');
+
+						$('html,body').animate({scrollTop:targetOffset}, speed);
+						if (mainNav.hasClass("open")) {
+							mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+							mainNav.removeClass("open");
+						}
+					}
+
+					if (typeof console === "undefined") {
+						console = {
+							log: function() { }
+						};
+					}
+					
+				</script> 
+				<script type="text/javascript">
+					document.getElementById('links').onclick = function (event) {
+						event = event || window.event;
+						var target = event.target || event.srcElement,
+						link = target.src ? target.parentNode : target,
+						options = {index: link, event: event},
+						links = this.getElementsByTagName('a');
+						blueimp.Gallery(links, options);
+					};
+			</script>
 			</div>
 		</div>
 	</body>

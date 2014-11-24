@@ -567,7 +567,6 @@ display: none;
 }
 
 .pie_chart{
-margin-left: 11.286em;
 margin-top: 1.786em;
 }
 
@@ -633,7 +632,7 @@ box-shadow: none;
 }
 
 .btn-default:hover{
-background-color: #e7613f;
+background-color: #B02D0B;
 color: #FFF;
 }
 
@@ -752,11 +751,14 @@ color:#7d7d7d;
 font-style:italic;
 }
 
-input:required, textarea:required {
--moz-box-shadow:none;
--webkit-box-shadow:none;
--o-box-shadow:none;
-box-shadow:none;
+.form-control,
+input,
+input:required, 
+textarea:required {
+-moz-box-shadow: inset 4px 4px 6px 4px #333;;
+-webkit-box-shadow: inset 4px 4px 6px 4px #333;;
+-o-box-shadow: inset 4px 4px 6px 4px #333;;
+box-shadow: inset 4px 4px 6px 4px #333;;
 }
 
 /*************Media Queries******************/
@@ -892,11 +894,6 @@ margin: 0 !important;
 
 .icon h2{
 font-size: 1.250em;
-}
-
-
-.pie_chart{
-margin-left: 33.33333333333333%;
 }
 
 /*******Portfolio*************/
