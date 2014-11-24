@@ -1,7 +1,4 @@
 jjthegreat
-
 ==========
-
-
 
 Personal Portfolio SIte
