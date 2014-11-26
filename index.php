@@ -15,7 +15,56 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/blueimp-gallery.min.css" type="text/css">
 		<link rel="stylesheet" href="css/bootstrap-image-gallery.css" type="text/css"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/animate.css" type="text/css">
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.viewportchecker.js?ver=1.7.1"></script>
+		<script type="text/javascript">
+			$( document ).ready( function() {
+
+				$('.bounce-in-right').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated bounceInRight',
+	                offset: 50,
+	                repeat: true
+	              });
+
+				$('.bounce-in-left').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated bounceInLeft',
+	                offset: 50,
+	                repeat: true
+	              });
+
+				$('.fade').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated fadeIn',
+	                offset: 200,
+	                repeat: true
+          		 });
+
+	            $('.fade-down').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated fadeInDown',
+	                offset: 300,
+	                repeat: true
+          		 });
+
+	            $('.flip-in-x').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated flipInX',
+	                offset: 100,
+	                repeat: true
+	              });
+
+	            $('.flip-in-y').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated flipInY',
+	                offset: 100,
+	                repeat: true
+	              });
+
+	            $('.roll-in').addClass('scroll-hidden').viewportChecker({
+	                classToAdd: 'scroll-visible animated rollIn',
+	                offset: 100,
+	                repeat: true
+	              });
+
+    		});
+		</script>
 		<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
@@ -51,7 +100,7 @@
 		</nav>
 		<div id="intro" class="page-section section">
 			<div class="container">
-				<div class="row fade-in one" id="homepage">
+				<div class="row fade-in one bounce-in-right" id="homepage">
 					<div class="col-sm-4 col-md-4">
 						<object data="img/topLeft.svg" type="image/svg+xml">
 							</object>
@@ -65,7 +114,7 @@
 							</object>
 					</div>
 				</div>
-				<div class="row fade-in two">
+				<div class="row fade-in two bounce-in-left">
 					<div class="col-sm-4 col-md-4 remove">
 						<object data="img/bottomLeft.svg" type="image/svg+xml">
 							</object>
@@ -85,10 +134,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6" id="aboutLeft">
-						<h1>
+						<h1 class="fade">
 							This Is Who I Am
 						</h1>
-						<div class="row" id="stickFigures">
+						<div class="row flip-in-y" id="stickFigures">
 							<div class="col-xs-3 col-md-3">
 								<img src="img/husband.png" class="img-responsive">
 							</div>
@@ -98,18 +147,20 @@
 							<div class="col-xs-3 col-md-3">
 								<img src="img/superhero.png" class="img-responsive">
 							</div>
-						</div><!--end row--><img src="img/divider.png" id="divider" class="img-responsive">
-						<p>
-							I've always enjoyed working with computers, but at some point I fell in love with the internet and thus, web design. I quickly began teaching myself everything I could with what little free time I have. I have a background in computer programming, so I'm comfortable with backend work as well. My true love, however, is for designing clean, creative, and effective websites for people like you.
-						</p>
-						<p>
-							I still have a hard time believing that I can make a living exploring my curiosity. I enjoy learning new things and expanding on what I already know. Aside from my creative endeavors, I'm a an ambitious comic book aficionado and zealous movie buff. I secretly hope that if I ever get bitten by a spider that I'll turn into Spider-Man.
-						</p>
-						<p>
-							I also enjoy LEGOS, there you go.
-						</p>
+						</div><!--end row--><img src="img/divider.png" id="divider" class="img-responsive fade">
+						<div class="fade">
+							<p>
+								I've always enjoyed working with computers, but at some point I fell in love with the internet and thus, web design. I quickly began teaching myself everything I could with what little free time I have. I have a background in computer programming, so I'm comfortable with backend work as well. My true love, however, is for designing clean, creative, and effective websites for people like you.
+							</p>
+							<p>
+								I still have a hard time believing that I can make a living exploring my curiosity. I enjoy learning new things and expanding on what I already know. Aside from my creative endeavors, I'm a an ambitious comic book aficionado and zealous movie buff. I secretly hope that if I ever get bitten by a spider that I'll turn into Spider-Man.
+							</p>
+							<p>
+								I also enjoy LEGOS, there you go.
+							</p>
+						</div>
 					</div>
-					<div class="col-md-6" id="arrowImg">
+					<div class="col-md-6 fade-down" id="arrowImg">
 						<img src="img/profileArrow_superman.png" class="img-responsive">
 					</div>
 				</div>
@@ -117,7 +168,7 @@
 		</div><!--end aboutPage-->
 		<!--PORTFOLIO-->
 		<div id="portfolio" class="page-section section">
-			<div class="container">
+			<div class="container fade">
 				<h1>
 					Some Stuff I've Done
 				</h1><!--Accordion-->
@@ -434,10 +485,10 @@
 		</div><!--end portfolio-->
 		<div id="skills" class="page-section section">
 			<div class="container">
-				<h1>
+				<h1 class="fade">
 					Some Stuff I Can Do
 				</h1>
-				<div class="row icon_row">
+				<div class="row icon_row flip-in-x">
 					<div class="col-xs-3 col-md-3 icon">
 						<object data="img/icons/designIcon.svg" type="image/svg+xml">
 							</object>
@@ -468,7 +519,7 @@
 						</h2>
 					</div>
 				</div><!--end row-->
-				<div class="row icon_row">
+				<div class="row icon_row flip-in-x">
 					<div class="col-xs-3 col-md-3 icon">
 						<object data="img/icons/brandingIcon.svg" type="image/svg+xml">
 							</object>
@@ -499,7 +550,7 @@
 						</h2>
 					</div>
 				</div><!--end row-->
-				<div class="col-xs-5 col-sm-offset-4 pie_chart">
+				<div class="col-xs-5 col-sm-offset-4 pie_chart roll-in">
 					<object data="img/skills_chart.svg" type="image/svg+xml">
 						</object>
 				</div>
@@ -507,7 +558,7 @@
 		</div><!--end skills-->
 		<div id="contact" class="page-section section">
 			<div class="container">
-				<h1>
+				<h1 class="fade">
 					Like What You See? Hire Me!
 				</h1>
 				<div class="row" id="thanks">
@@ -521,7 +572,7 @@
 					</div>
 				</div><!--end thanks-->
 				<!--CONTACT FORM-->
-				<div class="col-md-12 contact-section" id="contact-form">
+				<div class="col-md-12 contact-section fade" id="contact-form">
 					<?php  
 							//init variables  
 							$cf = array();  
@@ -590,26 +641,26 @@
 					</form><?php unset($_SESSION['cf_returndata']); ?>
 				</div><!--End contact-form-->
 				<div class="row sm_row">
-					<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="col-xs-6 col-sm-3 col-md-3 roll-in">
 						<object data="img/social_media/facebook.svg" type="image/svg+xml">
 							</object>
 					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="col-xs-6 col-sm-3 col-md-3 roll-in">
 						<object data="img/social_media/twitter.svg" type="image/svg+xml">
 							</object>
 					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="col-xs-6 col-sm-3 col-md-3 roll-in">
 						<object data="img/social_media/linked_in.svg" type="image/svg+xml">
 							</object>
 					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="col-xs-6 col-sm-3 col-md-3 roll-in">
 						<object data="img/social_media/pinterest.svg" type="image/svg+xml">
 							</object>
 					</div>
 				</div>
 				<div class="row sm_row">
 					<div class="col-xs-12">
-						<span style="font-size: 11px; font-family:Arial, Helvetica, sans-serif; display: inline-block; text-align: center; width: 125px;"><a title="J.J. Design" href="http://www.thumbtack.com/J-J-Design-Charleston-SC/service/817187" style="background: none; padding:0; border:0;"><img src="http://cdn-1.thumbtackstatic.com/media/badge_gold.png" style="display: block; margin-bottom: 6px; border: 0;" id="thumbtack" target="_blank"></a></span>
+						<span class="roll-in" style="font-size: 11px; font-family:Arial, Helvetica, sans-serif; display: inline-block; text-align: center; width: 125px;"><a title="J.J. Design" href="http://www.thumbtack.com/J-J-Design-Charleston-SC/service/817187" style="background: none; padding:0; border:0;"><img src="http://cdn-1.thumbtackstatic.com/media/badge_gold.png" style="display: block; margin-bottom: 6px; border: 0;" id="thumbtack" target="_blank"></a></span>
 					</div>
 				</div><!--end container->
 		</div>
@@ -622,8 +673,9 @@
 				<script src="js/jquery.blueimp-gallery.min.js" type="text/javascript"></script>
 				<script src="js/bootstrap-image-gallery.js" type="text/javascript"></script>
 				<script src="js/script.js" type="text/javascript"></script>
+				<script src="js/animations.js" type="text/javascript"></script>
 				<script type="text/javascript">
-					$(document).ready(function() {
+					jQuery(document).ready(function($) {
 						// navigation click actions 
 						$('.scroll-link').on( 'click', function(event){
 
@@ -649,26 +701,6 @@
 					// $('.navbar-collapse').click('li', function() {
 					// 	$('.navbar-collapse').collapse('hide');
 					// });
-
-					// scroll function
-					function scrollToID(id, speed){
-
-						var offSet = 50;
-						var targetOffset = $(id).offset().top - offSet;
-						var mainNav = $('#main-nav');
-
-						$('html,body').animate({scrollTop:targetOffset}, speed);
-						if (mainNav.hasClass("open")) {
-							mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-							mainNav.removeClass("open");
-						}
-					}
-
-					if (typeof console === "undefined") {
-						console = {
-							log: function() { }
-						};
-					}
 					
 				</script> 
 				<script type="text/javascript">
