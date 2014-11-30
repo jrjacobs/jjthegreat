@@ -35,14 +35,12 @@
 
 				$('.fade').addClass('scroll-hidden').viewportChecker({
 	                classToAdd: 'scroll-visible animated fadeIn',
-	                offset: 200,
-	                repeat: true
+	                offset: 200
           		 });
 
 	            $('.fade-down').addClass('scroll-hidden').viewportChecker({
 	                classToAdd: 'scroll-visible animated fadeInDown',
-	                offset: 300,
-	                repeat: true
+	                offset: 300
           		 });
 
 	            $('.flip-in-x').addClass('scroll-hidden').viewportChecker({
@@ -77,7 +75,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
 				</div><!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse fade">
 					<ul class="nav navbar-nav">
 						<li>
 							<a href="#" class="scroll-link" data-id="about">About</a>
