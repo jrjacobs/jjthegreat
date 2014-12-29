@@ -224,18 +224,6 @@
 									<img src="img/logos/advantage_logo.png" class="img-responsive logo-center" id="advantage_logo">
 									<ul class="ch-grid">
 										<li>
-											<div class="ch-item ch-adv-1">
-												<div class="ch-info">
-													<h3>
-														<a href="http://www.ghostwriting101.com" target="_blank">Ghostwriting 101</a>
-													</h3>
-													<p>
-														Design | Branding | WordPress
-													</p>
-												</div>
-											</div>
-										</li>
-										<li>
 											<div class="ch-item ch-adv-2">
 												<div class="ch-info">
 													<h3 class="less-pad">
